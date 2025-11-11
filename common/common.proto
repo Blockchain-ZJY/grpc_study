@@ -4,7 +4,9 @@ option go_package="/common";
 
 service CommonService{
   rpc GetUserInfo(UserId) returns (stream UserInfo){}
+  rpc GetByCID(FileCID) returns (stream FileResponse){}
 }
+
 
 message UserId{ 
     string id = 1;
@@ -15,4 +17,26 @@ message UserInfo{
     string status = 3;
     string code = 4;
     string email = 5;
+}
+
+message FileResponse{
+  string fileName = 1;
+  bytes files = 2;
+}
+
+message FileCID{
+  string CID = 1;
+}
+
+message ClientRequest{
+  string fileName = 1;
+  bytes files = 2;
+}
+
+message UploadFileResponse{
+  bytes status = 1;
+}
+
+service UploadFileServiceStreaming{ 
+  rpc UploadFile (stream ClientRequest) returns (UploadFileResponse){}
 }

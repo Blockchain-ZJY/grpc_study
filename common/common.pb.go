@@ -141,6 +141,198 @@ func (x *UserInfo) GetEmail() string {
 	return ""
 }
 
+type FileResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FileName      string                 `protobuf:"bytes,1,opt,name=fileName,proto3" json:"fileName,omitempty"`
+	Files         []byte                 `protobuf:"bytes,2,opt,name=files,proto3" json:"files,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *FileResponse) Reset() {
+	*x = FileResponse{}
+	mi := &file_common_common_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *FileResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FileResponse) ProtoMessage() {}
+
+func (x *FileResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_common_common_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FileResponse.ProtoReflect.Descriptor instead.
+func (*FileResponse) Descriptor() ([]byte, []int) {
+	return file_common_common_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *FileResponse) GetFileName() string {
+	if x != nil {
+		return x.FileName
+	}
+	return ""
+}
+
+func (x *FileResponse) GetFiles() []byte {
+	if x != nil {
+		return x.Files
+	}
+	return nil
+}
+
+type FileCID struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	CID           string                 `protobuf:"bytes,1,opt,name=CID,proto3" json:"CID,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *FileCID) Reset() {
+	*x = FileCID{}
+	mi := &file_common_common_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *FileCID) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FileCID) ProtoMessage() {}
+
+func (x *FileCID) ProtoReflect() protoreflect.Message {
+	mi := &file_common_common_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FileCID.ProtoReflect.Descriptor instead.
+func (*FileCID) Descriptor() ([]byte, []int) {
+	return file_common_common_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *FileCID) GetCID() string {
+	if x != nil {
+		return x.CID
+	}
+	return ""
+}
+
+type ClientRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FileName      string                 `protobuf:"bytes,1,opt,name=fileName,proto3" json:"fileName,omitempty"`
+	Files         []byte                 `protobuf:"bytes,2,opt,name=files,proto3" json:"files,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ClientRequest) Reset() {
+	*x = ClientRequest{}
+	mi := &file_common_common_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ClientRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ClientRequest) ProtoMessage() {}
+
+func (x *ClientRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_common_common_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ClientRequest.ProtoReflect.Descriptor instead.
+func (*ClientRequest) Descriptor() ([]byte, []int) {
+	return file_common_common_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *ClientRequest) GetFileName() string {
+	if x != nil {
+		return x.FileName
+	}
+	return ""
+}
+
+func (x *ClientRequest) GetFiles() []byte {
+	if x != nil {
+		return x.Files
+	}
+	return nil
+}
+
+type UploadFileResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Status        []byte                 `protobuf:"bytes,1,opt,name=status,proto3" json:"status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UploadFileResponse) Reset() {
+	*x = UploadFileResponse{}
+	mi := &file_common_common_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UploadFileResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UploadFileResponse) ProtoMessage() {}
+
+func (x *UploadFileResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_common_common_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UploadFileResponse.ProtoReflect.Descriptor instead.
+func (*UploadFileResponse) Descriptor() ([]byte, []int) {
+	return file_common_common_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *UploadFileResponse) GetStatus() []byte {
+	if x != nil {
+		return x.Status
+	}
+	return nil
+}
+
 var File_common_common_proto protoreflect.FileDescriptor
 
 const file_common_common_proto_rawDesc = "" +
@@ -153,9 +345,23 @@ const file_common_common_proto_rawDesc = "" +
 	"\bpassword\x18\x02 \x01(\tR\bpassword\x12\x16\n" +
 	"\x06status\x18\x03 \x01(\tR\x06status\x12\x12\n" +
 	"\x04code\x18\x04 \x01(\tR\x04code\x12\x14\n" +
-	"\x05email\x18\x05 \x01(\tR\x05email2D\n" +
+	"\x05email\x18\x05 \x01(\tR\x05email\"@\n" +
+	"\fFileResponse\x12\x1a\n" +
+	"\bfileName\x18\x01 \x01(\tR\bfileName\x12\x14\n" +
+	"\x05files\x18\x02 \x01(\fR\x05files\"\x1b\n" +
+	"\aFileCID\x12\x10\n" +
+	"\x03CID\x18\x01 \x01(\tR\x03CID\"A\n" +
+	"\rClientRequest\x12\x1a\n" +
+	"\bfileName\x18\x01 \x01(\tR\bfileName\x12\x14\n" +
+	"\x05files\x18\x02 \x01(\fR\x05files\",\n" +
+	"\x12UploadFileResponse\x12\x16\n" +
+	"\x06status\x18\x01 \x01(\fR\x06status2{\n" +
 	"\rCommonService\x123\n" +
-	"\vGetUserInfo\x12\x0e.common.UserId\x1a\x10.common.UserInfo\"\x000\x01B\tZ\a/commonb\x06proto3"
+	"\vGetUserInfo\x12\x0e.common.UserId\x1a\x10.common.UserInfo\"\x000\x01\x125\n" +
+	"\bGetByCID\x12\x0f.common.FileCID\x1a\x14.common.FileResponse\"\x000\x012a\n" +
+	"\x1aUploadFileServiceStreaming\x12C\n" +
+	"\n" +
+	"UploadFile\x12\x15.common.ClientRequest\x1a\x1a.common.UploadFileResponse\"\x00(\x01B\tZ\a/commonb\x06proto3"
 
 var (
 	file_common_common_proto_rawDescOnce sync.Once
@@ -169,16 +375,24 @@ func file_common_common_proto_rawDescGZIP() []byte {
 	return file_common_common_proto_rawDescData
 }
 
-var file_common_common_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_common_common_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_common_common_proto_goTypes = []any{
-	(*UserId)(nil),   // 0: common.UserId
-	(*UserInfo)(nil), // 1: common.UserInfo
+	(*UserId)(nil),             // 0: common.UserId
+	(*UserInfo)(nil),           // 1: common.UserInfo
+	(*FileResponse)(nil),       // 2: common.FileResponse
+	(*FileCID)(nil),            // 3: common.FileCID
+	(*ClientRequest)(nil),      // 4: common.ClientRequest
+	(*UploadFileResponse)(nil), // 5: common.UploadFileResponse
 }
 var file_common_common_proto_depIdxs = []int32{
 	0, // 0: common.CommonService.GetUserInfo:input_type -> common.UserId
-	1, // 1: common.CommonService.GetUserInfo:output_type -> common.UserInfo
-	1, // [1:2] is the sub-list for method output_type
-	0, // [0:1] is the sub-list for method input_type
+	3, // 1: common.CommonService.GetByCID:input_type -> common.FileCID
+	4, // 2: common.UploadFileServiceStreaming.UploadFile:input_type -> common.ClientRequest
+	1, // 3: common.CommonService.GetUserInfo:output_type -> common.UserInfo
+	2, // 4: common.CommonService.GetByCID:output_type -> common.FileResponse
+	5, // 5: common.UploadFileServiceStreaming.UploadFile:output_type -> common.UploadFileResponse
+	3, // [3:6] is the sub-list for method output_type
+	0, // [0:3] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -195,9 +409,9 @@ func file_common_common_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_common_common_proto_rawDesc), len(file_common_common_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   6,
 			NumExtensions: 0,
-			NumServices:   1,
+			NumServices:   2,
 		},
 		GoTypes:           file_common_common_proto_goTypes,
 		DependencyIndexes: file_common_common_proto_depIdxs,

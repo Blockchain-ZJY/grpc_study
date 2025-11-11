@@ -20,15 +20,53 @@ func main() {
 	}
 	defer conn.Close()
 	// 初始化客户端
-	client := common.NewCommonServiceClient(conn)
-	stream, err := client.GetUserInfo(context.Background(), &common.UserId{
-		Id: "张三",
-	})
+	// client := common.NewCommonServiceClient(conn)
+	// stream, err := client.GetUserInfo(context.Background(), &common.UserId{
+	// 	Id: "张三",
+	// })
 
-	for i := 0; i < 5; i++ {
-		fmt.Println(stream.Recv())
+	// for {
+	// 	response, err := stream.Recv()
+	// 	if err == io.EOF {
+	// 		break
+	// 	}
+	// 	fmt.Println(response)
+	// }
 
-	}
+	// stream, err := client.GetByCID(context.Background(), &common.FileCID{
+	// 	CID: "张三",
+	// })
+
+	// // fils write
+	// file, err := os.OpenFile("static/filsdownload.zip", os.O_CREATE|os.O_WRONLY, 0666)
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
+	// defer file.Close()
+
+	// writer := bufio.NewWriter(file)
+	// for {
+	// 	response, err := stream.Recv()
+	// 	if err == io.EOF {
+	// 		break
+	// 	}
+	// 	fmt.Println("写入%d", len(response.Files))
+	// 	writer.Write(response.Files)
+	// }
+	// writer.Flush()
 	// fmt.Println(result1, err)
 
+	client := common.NewUploadFileServiceStreamingClient(conn)
+
+	stream, err := client.UploadFile(context.Background())
+
+	for i := 0; i < 10; i++ {
+		stream.Send(&common.ClientRequest{
+			Files: []byte("张三"),
+		})
+		fmt.Printf("发送%d\n", i)
+	}
+
+	respo, err := stream.CloseAndRecv()
+	fmt.Println(respo, err)
 }
